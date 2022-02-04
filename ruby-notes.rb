@@ -153,7 +153,15 @@ puts "string".include? "ring"   # ==> true
 # .split  -takes in a string and return an array. convert string to an array
 "string".split("")   # => ["s", "t", "r", "i", "n", "g"]
 
+words = "hello there".split
+puts words # => ["hello", "there"]
 
+
+# .sort_by  -function returns an array of array, great for sorthing Hash. see example of the hash section
+
+# .to_s  -convert data to string
+count = 2
+puts count.to_s  # ==> "2" 
 
 # user input
 # In order to get input from the user, we’ll first need to print a prompt on the screen.
@@ -256,6 +264,9 @@ lunch = {
 lunch = Hash.new
 puts lunch # => {}  
 
+money = Hash.new(0)  # give hash a default value of 0, great for counting  ==> {}
+puts money["key"]  # ==> 0
+
 # Adding Key Value Pairs in the hash using bracket notation
     # a new key-value pair can be added to a hash using bracket notation. 
         # The new key is bracketed after the name of the hash and then the value is assigned after the equals sign.
@@ -308,13 +319,55 @@ end
 
 
 # iterate through an hash
+# When iterating over hashes, we need two placeholder variables to represent each key/value pair.
+
 polygons = {
   "pentagon" => 5,
   "hexagon" => 6,
   "nonagon" => 9
 }
  
-polygons.each do |shape, sides|
-  puts "A #{shape} has #{sides} sides."
+polygons.each do |shape, side|    # |key, value| 
+  puts "A #{shape} has #{side} sides."
 end
 
+
+# counting with hash 
+scores = {
+    "me" => 10,
+    "bro" => 5,
+    "sis" => 8,
+}
+
+scores = scores.sort_by do |who, points|  # sort by the value from least to greatest, returns an array of an array
+    points
+end
+puts scores  # ==> [["bro", 5], ["sis", 8], ["me", 10]]
+
+    
+
+# Methods, Blocks, & Sorting 
+
+=begin
+    method - reusable section of code written to perform a specific task in a program 
+        - pros of dividing and organizing your program into method: 
+            easier to debug, reusable code keeping it DRY (can even use that method in another program )
+    methods are defined using the def syntax (def is short for define)
+    has 3 parts:
+        1. header - which include def keyword, and name of the method, and arguments the method takes
+        2. body - code block that describes the procedures the method carries out. indented 2 spaces
+        3. end - method ends with the end keyword
+    
+        call the method which tell your program to execute the code
+
+        * if method cannot be found to call, will get NameError
+=end
+
+def name(parameter)  #the paranthesis is usually optional for ruby, but it is for the sake of readibility 
+    puts parameter + "the body"
+end
+
+name("here's")  #calling the method with the argument # ==> here's the body
+#parameter vs argument. parameter is a name placeholder, while argument is the actual info passed
+
+# <=>  -combined comparison operator (spaceship operator) is used for comparing 2 objects
