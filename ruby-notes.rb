@@ -36,6 +36,83 @@ print "I am #{age}!"  ===> "I am 200"
 
 # has 6 arithmetic operator: +, -, *, /, ** (exponent), % (modulo, remainder of division)
 
+=begin
+    Control flow - gives flexibility of Ruby programming.
+        we can select different outcomes depending on the information/data
+            using conditional statements: if/elsif/else
+                conditional statement takes an expression that evaluate true or false, 
+                    if true ruby execute the block of code that follows the if
+                    if else -  If this expression is true, run this code block; otherwise, run the code after the else statement.
+                    * an if statement evaluates to either true or false. The code indented after the if portion is executed
+                      for true while the code indented after the else portion is executed for false
+                Expression is a chunk of Ruby code that the Ruby interpreter can evaluate to produce a value
+                
+                Sometimes you want to use control flow to check if something is false, rather than if it’s true. 
+                    You could reverse your if/else, 
+                        but Ruby will do you one better: it will let you use an unless statement.
+                
+                        
+=end
+
+# if statement  
+if 1 > 2
+    print "yes 1 is less than 2"
+end
+
+# if else statement 
+if 1 > 2
+    print "yes 1 is less than 2"
+else
+    print "no 1 is not less than 2"
+end
+
+# elsif statement - must be place btwn if and else
+if num == 5
+    print "number is 5"
+elsif num == 10
+    print "num is 10"
+else 
+    print "something other than 5 or 10"
+end
+
+
+# unless statement -check if it is false. reverse of if/else statement
+hungry = false
+unless
+  puts "I'm writing Ruby programs!"
+else
+  puts "Time to eat!"
+end
+
+
+# assignment operators: =, +=, ==, *=, /=
+    # ==  a comparator(also known as relational operator), means is equal to
+# !   is the not operation, flips a boolean value
+# Comparison operator in Ruby: <, >, >=, <=, ==, &&, ||
+
+# ||   - or operator, logical operator which return true if either expressions is true 
+grade1 = 50
+grade2 = 30
+grade3 = 80
+ 
+if grade1 > grade2 || grade1 > grade3
+  puts "Grade 1 is not the lowest score!"
+end
+
+# &&  - logical operator which evaluates to true if only if both expressions are true
+score1 = 50
+score2 = 20
+score3 = 10
+if score1 > score2 && score1 > score3
+  print "Score 1 is the greatest in value."
+else
+  print "Score 1 is not the greatest in value."
+end
+
+
+
+
+# METHODS
 
 =begin 
     everything in Ruby is an Object 
@@ -60,10 +137,7 @@ puts "abc".upcase   # ==> ABC
 puts "ABC".downcase   # ==> abc
 
 # .capitalize   -capitalizes the first letter of a string and makes the rest of the letters lower case
-
-
-
-
+puts "hello there".capitalize  # ==> Hello there
 
 
 # user input
@@ -72,3 +146,5 @@ puts "ABC".downcase   # ==> abc
 # since ruby auto adds a blank line(newlinec) after each bit of input, we use chomp to removes the extra line
 print "What is your name?"
 first_name = gets.chomp
+
+# .each  -this method iterate through each element of an array in Ruby. preferred over for loops
