@@ -123,6 +123,10 @@ end
 
 
 # some Ruby methods: 
+# ! use at the end of method so the string is modified in-place; otherwise Ruby create a copy and modify that instead
+user_input = gets.chomp
+user_input.downcase!
+# note: methods that end with ? evaluates to boolean vaules
 
 # .length   -get the length of the string inclduing spaces and symbol
 puts "Hello World".length  # ==> 11
@@ -139,6 +143,14 @@ puts "ABC".downcase   # ==> abc
 # .capitalize   -capitalizes the first letter of a string and makes the rest of the letters lower case
 puts "hello there".capitalize  # ==> Hello there
 
+# .include?   -return true if the given string contains the given string or character otherwise false
+puts "string".include? "ring"   # ==> true
+
+# .gsub!(/wordToReplace/, "raplaceWiththisWord")   --global substitution, 
+#subsitute the word you want to replace with what you want to replace. No space btwn .gsub! and the parenthesis
+"milk".gsub!(/i/, "e")   # ==> melk
+
+
 
 # user input
 # In order to get input from the user, we’ll first need to print a prompt on the screen.
@@ -147,4 +159,56 @@ puts "hello there".capitalize  # ==> Hello there
 print "What is your name?"
 first_name = gets.chomp
 
+
+
+
+
+
+
+# iterators / loops
+
+# while loop - repeat an action in Ruby while a certain condition is true, 
+               # and while it is, the loop keeps running.
+               # As soon as the condition stops being true, the loop stops!
+counter = 1
+while counter < 11    # while counter is less than 11, it will continue to loop
+    puts counter
+    counter = counter + 1
+end
+
+
+# until loop  -sort of like a backward while loop
+counter = 1
+until counter > 10  # until counter is more than 10, then it will stop loop
+  puts counter
+  counter += 1
+end
+
+# for loop -great for when you don't know how many times you'll be looping
+for num in 1...10    # For the variable num in the range 1 to 10, do the following
+  puts num
+end
+
+# 1...10  -- 3 dots mean "go up to this range but don't include 10"
+# 1..10   -- 2 dots mean "include the highest number in the range. go up to including 10." 
+
+# loop method --- creates infinite loop
+loop { print "Hello" }
+
 # .each  -this method iterate through each element of an array in Ruby. preferred over for loops
+
+
+# infinite loop will crash your program, so best to avoid it by having a stop case
+
+
+
+
+
+
+
+
+
+
+
+    
+
