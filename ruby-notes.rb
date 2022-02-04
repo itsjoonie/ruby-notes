@@ -150,6 +150,9 @@ puts "string".include? "ring"   # ==> true
 #subsitute the word you want to replace with what you want to replace. No space btwn .gsub! and the parenthesis
 "milk".gsub!(/i/, "e")   # ==> melk
 
+# .split  -takes in a string and return an array. convert string to an array
+"string".split("")   # => ["s", "t", "r", "i", "n", "g"]
+
 
 
 # user input
@@ -211,12 +214,12 @@ for i in 1..5
 end
 
 # times method  - loop over how many time
-5.times { puts ""hello"" }
-
-
-
+5.times { puts "hello" }
 
 # infinite loop will crash your program, so best to avoid it by having a stop case
+
+##################
+
 
 
 
@@ -225,9 +228,12 @@ end
     array -  an ordered collection of Ruby objects separated by commas and enclosed in []. 
              An array can contain the same or different types of Ruby objects, 
                 such as Integers, Strings, Floats, etc. An array can also be empty.
+
+    # if we dont want to use indices, we can just make a hash instead of array. hash use key-value pair
     
     hash - can be created through literal notation (because we are literally assigning what key=>value pairs we want in the hash) 
             or by assigning a variable equal to Hash.new which generates a new, empty hash.
+            note the H in Hash.new must be capitalize
 =end
 
 
@@ -235,6 +241,9 @@ end
 array = ["bye", 2, "hello", 3]
 # indexing an array to access the element
 puts array[0] # gives you the first element. ==> bye 
+
+
+# 2 ways to create hash: literal notation or through Hash,new
 
 # Creating a hash through literal notation:
 lunch = {
@@ -245,10 +254,9 @@ lunch = {
  
 #Creating a hash through Hash.new
 lunch = Hash.new
-puts lunch # => {}
-    
+puts lunch # => {}  
 
-# Ruby Hash Bracket Notation Adding Pairs
+# Adding Key Value Pairs in the hash using bracket notation
     # a new key-value pair can be added to a hash using bracket notation. 
         # The new key is bracketed after the name of the hash and then the value is assigned after the equals sign.
 teammates = Hash.new
@@ -259,21 +267,45 @@ salary = {
 }
 salary["mid-level"] = 60000
 
+# values in a hash can be accessed using bracket notation 
+# hash[key]   ==> gives you the value
+my_love = {
+  "dog" => "Keanu",
+  "breed" => "Shiba Inu",
+  "age_in_years" => 1,
+}
+ 
+puts my_love["breed"] # => Shiba Inu
+
 # .each  -is used to iterate over arrays and hashes. This allows each element in an array and each key-value pair in a hash to be iterated.
-# can use do keyword instead {}
+
 # The variable name between | | can be anything you like: it’s just a placeholder for each element of the object you’re using .each on 
+
+#  2 ways to write it, can use do keyword instead {}
 object.each { |element| 
   # Do something 
 }
+
 object.each do |element| 
   # Do something 
 end
 
 
-# iterate through an array
 
-colors = ["red", "blue", "green", "yellow"]
-colors.each { |color| puts color }
+# iterate through an array
+numbers = [1, 2, 3, 4, 5]
+
+# one way to loop
+numbers.each { |item| puts item }
+ 
+# another way to loop
+numbers.each do |item|
+  puts item
+end
+
+
+
+
 
 # iterate through an hash
 polygons = {
@@ -286,12 +318,3 @@ polygons.each do |shape, sides|
   puts "A #{shape} has #{sides} sides."
 end
 
-# values in a hash can be accessed using bracket notation 
-# hash[key]   ==> gives you the value
-my_love = {
-  "dog" => "Keanu",
-  "breed" => "Shiba Inu",
-  "age_in_years" => 1,
-}
- 
-puts my_love["breed"] # => Shiba Inu
