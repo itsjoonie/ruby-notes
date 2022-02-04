@@ -189,26 +189,109 @@ for num in 1...10    # For the variable num in the range 1 to 10, do the followi
   puts num
 end
 
+#ruby range 
 # 1...10  -- 3 dots mean "go up to this range but don't include 10"
 # 1..10   -- 2 dots mean "include the highest number in the range. go up to including 10." 
 
 # loop method --- creates infinite loop
 loop { print "Hello" }
+# can subsitute {} with do to create a better loop, use break keyword to stop the loop if condition is meet
+i = 0
+loop do
+  i += 1
+  print "#{i}"
+  break if i > 5     
+end
 
-# .each  -this method iterate through each element of an array in Ruby. preferred over for loops
+# next keyword can be used to skip over certain steps in the loop
+# ex: if we dont want to print out even number
+for i in 1..5
+  next if i % 2 == 0
+  print i
+end
+
+# times method  - loop over how many time
+5.times { puts ""hello"" }
+
+
 
 
 # infinite loop will crash your program, so best to avoid it by having a stop case
 
 
 
+=begin
+
+    array -  an ordered collection of Ruby objects separated by commas and enclosed in []. 
+             An array can contain the same or different types of Ruby objects, 
+                such as Integers, Strings, Floats, etc. An array can also be empty.
+    
+    hash - can be created through literal notation (because we are literally assigning what key=>value pairs we want in the hash) 
+            or by assigning a variable equal to Hash.new which generates a new, empty hash.
+=end
 
 
+# array 
+array = ["bye", 2, "hello", 3]
+# indexing an array to access the element
+puts array[0] # gives you the first element. ==> bye 
 
-
-
-
-
-
+# Creating a hash through literal notation:
+lunch = {
+  "protein" => "chicken",
+  "greens" => "lettuce",
+  "organic?" => true
+}
+ 
+#Creating a hash through Hash.new
+lunch = Hash.new
+puts lunch # => {}
     
 
+# Ruby Hash Bracket Notation Adding Pairs
+    # a new key-value pair can be added to a hash using bracket notation. 
+        # The new key is bracketed after the name of the hash and then the value is assigned after the equals sign.
+teammates = Hash.new
+teammates["forward"] = "Messi"
+ 
+salary = {
+  "starting" => 40000
+}
+salary["mid-level"] = 60000
+
+# .each  -is used to iterate over arrays and hashes. This allows each element in an array and each key-value pair in a hash to be iterated.
+# can use do keyword instead {}
+# The variable name between | | can be anything you like: it’s just a placeholder for each element of the object you’re using .each on 
+object.each { |element| 
+  # Do something 
+}
+object.each do |element| 
+  # Do something 
+end
+
+
+# iterate through an array
+
+colors = ["red", "blue", "green", "yellow"]
+colors.each { |color| puts color }
+
+# iterate through an hash
+polygons = {
+  "pentagon" => 5,
+  "hexagon" => 6,
+  "nonagon" => 9
+}
+ 
+polygons.each do |shape, sides|
+  puts "A #{shape} has #{sides} sides."
+end
+
+# values in a hash can be accessed using bracket notation 
+# hash[key]   ==> gives you the value
+my_love = {
+  "dog" => "Keanu",
+  "breed" => "Shiba Inu",
+  "age_in_years" => 1,
+}
+ 
+puts my_love["breed"] # => Shiba Inu
