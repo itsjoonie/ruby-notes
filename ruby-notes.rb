@@ -253,7 +253,7 @@ puts array[0] # gives you the first element. ==> bye
 
 # 2 ways to create hash: literal notation or through Hash,new
 
-# Creating a hash through literal notation:
+# Creating a hash through literal notation:, Each value is assigned to a key using a hash rocket (=>) 
 lunch = {
   "protein" => "chicken",
   "greens" => "lettuce",
@@ -370,4 +370,17 @@ end
 name("here's")  #calling the method with the argument # ==> here's the body
 #parameter vs argument. parameter is a name placeholder, while argument is the actual info passed
 
+
+# dont know how many arguments you are expecting? use splat argument *   <== that is splat 
+def my_friend (*friends)
+    friends.each do |friend_name|
+        puts "#{friend_name} is my friend"
+    end
+end
+
+my_friend("Ian", "Joe", "Bob", "Dove", "Sara")
+
+
+
 # <=>  -combined comparison operator (spaceship operator) is used for comparing 2 objects
+
