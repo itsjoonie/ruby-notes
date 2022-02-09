@@ -411,3 +411,9 @@ my_friend("Ian", "Joe", "Bob", "Dove", "Sara")
 # return - is used to pass back a value from a method 
 
 # .sort - array method, used to sort item in array from least to greatest. 
+my_array = [3, 4, 8, 7, 1, 6, 5, 9, 2]
+my_array.sort!
+#Attaching an ! to the end of .sort or any other Ruby method modifies the original array.
+print my_array
+# => [1, 2, 3, 4, 5, 6, 7, 8, 9]
+#If you didn't use !, print my_array returns the original array
