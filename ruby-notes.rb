@@ -123,7 +123,11 @@ end
 
 
 # some Ruby methods: 
-# ! use at the end of method so the string is modified in-place; otherwise Ruby create a copy and modify that instead
+=begin
+   ! use at the end of method so the string/array is modified in-place (modifies the original array); 
+     otherwise Ruby create a copy and modify that instead
+=end
+
 user_input = gets.chomp
 user_input.downcase!
 # note: methods that end with ? evaluates to boolean vaules
@@ -162,6 +166,10 @@ puts words # => ["hello", "there"]
 # .to_s  -convert data to string
 count = 2
 puts count.to_s  # ==> "2" 
+
+# .sort - array method, used to sort item in array from least to greatest. 
+my_array = [3, 4, 8, 7, 1, 6, 5, 9, 2]
+my_array.sort!
 
 # user input
 # In order to get input from the user, we’ll first need to print a prompt on the screen.
@@ -396,3 +404,10 @@ my_friend("Ian", "Joe", "Bob", "Dove", "Sara")
   passing a block to a method is a great way of abstracting certain tasks from the method
     and defining those tasks when we call the method
 =end
+
+# The block, {|i| puts i}, is passed the current array item each time it is evaluated. This block prints the item. 
+[1, 2, 3, 4, 5].each { |i| puts i }
+
+# return - is used to pass back a value from a method 
+
+# .sort - array method, used to sort item in array from least to greatest. 
