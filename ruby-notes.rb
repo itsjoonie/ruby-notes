@@ -405,7 +405,8 @@ my_friend("Ian", "Joe", "Bob", "Dove", "Sara")
     and defining those tasks when we call the method
 =end
 
-# The block, {|i| puts i}, is passed the current array item each time it is evaluated. This block prints the item. 
+# The block, {|i| puts i}, is passed the current array item each time it is evaluated. This block prints the item.
+#  a block is a section of code defined within the keywords do and end or with curly braces {} 
 [1, 2, 3, 4, 5].each { |i| puts i }
 
 # return - is used to pass back a value from a method 
