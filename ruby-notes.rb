@@ -383,4 +383,16 @@ my_friend("Ian", "Joe", "Bob", "Dove", "Sara")
 
 
 # <=>  -combined comparison operator (spaceship operator) is used for comparing 2 objects
+=begin 
 
+<=> returns 0 if the first operand equals the second, 1 if the first operand is greater than the second, and -1 if the first operand is less than the second.
+=end
+
+
+
+# Ruby BlocK Parameter 
+=begin 
+  method can take a block as a parameter.
+  passing a block to a method is a great way of abstracting certain tasks from the method
+    and defining those tasks when we call the method
+=end
